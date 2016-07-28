@@ -5,7 +5,9 @@ myNinjaApp.config(['$routeProvider', function($routeProvider){
     
     $routeProvider
         .when('/home', {
-            templateUrl: 'views/home.html'
+            templateUrl: 'views/home.html',
+            controller: 'NinjaController'
+        
     }).when('/directory', {
             templateUrl: 'views/directory.html',
             controller: 'NinjaController'
@@ -13,6 +15,24 @@ myNinjaApp.config(['$routeProvider', function($routeProvider){
             redirectTo: '/home'
     });
 }]);
+
+myNinjaApp.directive('randomNinja', [function(){
+    
+    return {
+        //allow directive to be used as element only
+        restrict: 'E',
+        scope: {
+            ninjas: '=',
+            title: '='
+        },
+        templateUrl: 'views/random.html',
+        controller: function($scope){
+            $scope.random = Math.floor(Math.random()* 4);
+        }
+    };
+    
+}]);
+
 
 //<html ng-app = "myNinjaApp" must be included"
 //declare a controller, name it ninjaController
