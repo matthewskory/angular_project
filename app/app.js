@@ -1,16 +1,25 @@
+//to deploy review tutorial 25 regarding urls
+
 var myNinjaApp = angular.module('myNinjaApp', ['ngRoute', 'ngAnimate']);
 //config method fires before anything else starts
 
-myNinjaApp.config(['$routeProvider', function($routeProvider){
+myNinjaApp.config(['$routeProvider','$locationProvider', function($routeProvider, $locationProvider){
+    
+    $locationProvider.html5Mode(true);
     
     $routeProvider
         .when('/home', {
             templateUrl: 'views/home.html',
             controller: 'NinjaController'
         
-    }).when('/contact', {
-            templateUrl: 'views/contact.html'
-        
+    })
+        .when('/contact', {
+            templateUrl: 'views/contact.html',
+            controller: 'ContactController'
+    })
+        .when('/contact-success', {
+            templateUrl: 'views/contact-success.html',
+            controller: 'ContactController'
     })
         .when('/directory', {
             templateUrl: 'views/directory.html',
@@ -72,5 +81,13 @@ myNinjaApp.controller('NinjaController', ['$scope', '$http', function($scope, $h
         $scope.ninjas = data;
         
     })
+    
+}]);
+
+myNinjaApp.controller('ContactController', ['$scope', '$location', function($scope, $location){
+    
+    $scope.sendMessage = function(){
+        $location.path('/contact-success');
+    };
     
 }]);
