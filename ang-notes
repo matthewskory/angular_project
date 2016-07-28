@@ -1,0 +1,31 @@
+Directives = Direct angular to do stuff
+
+
+    ng-app      - 
+    ng-app      - 
+    ng-init     -lets you add data directly to  html
+    ng-repeat   -lets you loop through an array and do something with the data
+                -i.e. foods = ['ham','pork'] = ng-repeat = "food in foods" <li>{{food}}</li>
+    ng-include  -breaks up a HTML page into multiple pieces
+                -include ng-include as it's own html tag and src="'<file to include>'"
+                -use standard html tag and the attribute ng-include= "'<file to inlcude>'"
+    
+                
+Expressions     -little snippits of js code and goes between {{ }}  
+
+Modules         -let you organize you code into parts - define in apps.js
+    
+    app.js      -var myNinjaApp = angular.module('myNinjaApp', []); 
+    index.html  -<html ng-app = "myNinjaApp" to link to the module
+    
+Controllers     -
+
+
+Scope           -lets you create code that is only accessable to a particular area
+                - protect it from minification by enclosing it as follows
+                        -myNinjaApp.controller('ninjaController', ['$scope', function($scope){ do stuff }]);
+                -$scope.name = sets a variable like thing in the scope provided
+
+Filters         - add to directive using | (keep insde the "  ")
+                    -orderBy: 'key' '-key'          -ascending or descending
+                    -filter: search                 -include an input field with ng-model="search"
