@@ -8,10 +8,15 @@ myNinjaApp.config(['$routeProvider', function($routeProvider){
             templateUrl: 'views/home.html',
             controller: 'NinjaController'
         
-    }).when('/directory', {
+    }).when('/contact', {
+            templateUrl: 'views/contact.html'
+        
+    })
+        .when('/directory', {
             templateUrl: 'views/directory.html',
             controller: 'NinjaController'
-    }).otherwise({
+    })
+        .otherwise({
             redirectTo: '/home'
     });
 }]);

@@ -1,6 +1,5 @@
 Directives = Direct angular to do stuff
 
-
     ng-app          - 
     ng-app          - 
     ng-init         -lets you add data directly to  html
@@ -36,3 +35,13 @@ Filters         - add to directive using | (keep insde the "  ")
                     -filter: search                 -include an input field with ng-model="search"
 
 Views/Routing   -
+
+
+Form Classes    - ng-pristine - form/input field has not been used
+                - ng-dirty - form/input field has been used
+                
+                - ng-untouched - input has not been touched
+                - ng-touched - input has been touched
+                
+                - ng-valid - when a form field is valid
+                - ng-invalid - when a form field is not valid

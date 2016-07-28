@@ -102,6 +102,14 @@ main{
   margin: 10px 0;
 }
 
+.content textarea{
+  width: 90%;
+  padding: 10px 5%;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  margin: 10px 0;
+}
+
 .content input[type="submit"]:last-child{
   width: 150px;
   display: block;
@@ -156,3 +164,9 @@ main.ng-enter.ng-enter-active {
     transition-delay: .2s;
     transition-duration: 0;
 }
+
+input.ng-invalid.ng-touched, textarea.ng-invalid{
+    border: 2px solid red;
+}
+
+
