@@ -1,4 +1,4 @@
-var myNinjaApp = angular.module('myNinjaApp', ['ngRoute']);
+var myNinjaApp = angular.module('myNinjaApp', ['ngRoute', 'ngAnimate']);
 //config method fires before anything else starts
 
 myNinjaApp.config(['$routeProvider', function($routeProvider){
@@ -26,6 +26,8 @@ myNinjaApp.directive('randomNinja', [function(){
             title: '='
         },
         templateUrl: 'views/random.html',
+        transclude: true,
+        replace: true,
         controller: function($scope){
             $scope.random = Math.floor(Math.random()* 4);
         }
@@ -56,6 +58,10 @@ myNinjaApp.controller('NinjaController', ['$scope', '$http', function($scope, $h
     $scope.ninjas.splice(removedNinja, 1);
 
     };
+    
+    $scope.removeAll = function(){
+        $scope.ninjas = [];
+    }
     
     $http.get('data/ninjas.json').success(function(data){
         $scope.ninjas = data;
