@@ -16,7 +16,7 @@ myNinjaApp.config(['$routeProvider', function($routeProvider){
 
 //<html ng-app = "myNinjaApp" must be included"
 //declare a controller, name it ninjaController
-myNinjaApp.controller('NinjaController', ['$scope', function($scope){
+myNinjaApp.controller('NinjaController', ['$scope', '$http', function($scope, $http){
     
     $scope.addNinja = function(){
        $scope.ninjas.push({
@@ -31,41 +31,15 @@ myNinjaApp.controller('NinjaController', ['$scope', function($scope){
     };
     
     
-    $scope.ninjas = [
-        {
-            name: 'Andrea',
-            belt: 'Black',
-            rate: 1150,
-            available: true,
-            thumb: ""
-        },
-        {
-            name: 'Marbles',
-            belt: 'Yellow',
-            rate: 150,
-            available: true,
-            thumb: ""
-        },
-        {
-            name: 'Lundy',
-            belt: 'Brown',
-            rate: 70,
-            available: true,
-            thumb: ""
-        },
-        {
-            name: 'Marley',
-            belt: 'Blue',
-            rate: 10,
-            available: false,
-            thumb: ""
-        }];
-    
     $scope.removeNinja = function(ninja){
     var removedNinja = $scope.ninjas.indexOf(ninja);
     $scope.ninjas.splice(removedNinja, 1);
 
     };
     
+    $http.get('data/ninjas.json').success(function(data){
+        $scope.ninjas = data;
+        
+    })
     
 }]);
