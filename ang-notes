@@ -1,14 +1,19 @@
 Directives = Direct angular to do stuff
 
 
-    ng-app      - 
-    ng-app      - 
-    ng-init     -lets you add data directly to  html
-    ng-repeat   -lets you loop through an array and do something with the data
-                -i.e. foods = ['ham','pork'] = ng-repeat = "food in foods" <li>{{food}}</li>
-    ng-include  -breaks up a HTML page into multiple pieces
-                -include ng-include as it's own html tag and src="'<file to include>'"
-                -use standard html tag and the attribute ng-include= "'<file to inlcude>'"
+    ng-app          - 
+    ng-app          - 
+    ng-init         -lets you add data directly to  html
+    ng-repeat       -lets you loop through an array and do something with the data
+                    -i.e. foods = ['ham','pork'] = ng-repeat = "food in foods" <li>{{food}}</li>
+    ng-include      -breaks up a HTML page into multiple pieces
+                    -include ng-include as it's own html tag and src="'<file to include>'"
+                    -use standard html tag and the attribute ng-include= "'<file to inlcude>'"
+    ng-show/hide    -shows or hides something based on truthy value ng-show="truthy"
+    ng-click        -lets you set an order by variable linked to buttons
+                    -can set functions to click events as well 
+    ng-submit       -used in a form and binds a function to input elements (include in both the form AND input element)
+    ng-src          -lets angular specify the src of an image or file before the broswer does
     
                 
 Expressions     -little snippits of js code and goes between {{ }}  
@@ -29,3 +34,5 @@ Scope           -lets you create code that is only accessable to a particular ar
 Filters         - add to directive using | (keep insde the "  ")
                     -orderBy: 'key' '-key'          -ascending or descending
                     -filter: search                 -include an input field with ng-model="search"
+
+Views/Routing   -
